@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Client-Side Emotion Detection (Phase-2++)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TensorFlow.js (browser only) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+
+    <!-- App scripts -->
+    <script src="mfcc.js"></script>
+    <script src="main.js" defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 14px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Emotion bars */
+        .bar {
+            width: 100%;
+            height: 18px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 6px;
+            transition: width 0.15s linear;
+        }
+
+        #bars {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🎤 Client-Side Emotion Detection (Phase-2++)</h2>
+
+<button id="initBtn">Initialize</button>
+<button id="startBtn" disabled>Start Detection</button>
+
+<div id="status">Status: Not initialized</div>
+<div id="result">Emotion: —</div>
+
+<!-- Confidence bars container (MANDATORY) -->
+<div id="bars"></div>
+
+</body>
+</html>
