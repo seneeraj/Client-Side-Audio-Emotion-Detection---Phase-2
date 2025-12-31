@@ -5,7 +5,7 @@ This project represents **Phase-2++**, a stability-focused redesign after identi
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 **Goal:**  
 Build a **browser-deployable emotion detection system** that performs real-time inference on microphone audio using a **Dense-only neural network** and **MFCC features**, fully compatible with TensorFlow.js.
@@ -15,21 +15,21 @@ Build a **browser-deployable emotion detection system** that performs real-time 
 
 ---
 
-## ✅ Key Features
+## Key Features
 
-- 🎧 Real-time microphone audio capture (Web Audio API)
-- 🧠 Dense-only neural network (TFJS LayersModel)
-- 📊 13-dimensional MFCC feature input
-- ⚡ 100% client-side inference (no backend, no APIs)
-- 🎨 Color-coded emotion confidence bars
-- 🔁 Prediction smoothing (EMA)
-- 🔇 Silence detection & gating
-- ⏱ FPS / latency throttling for performance
-- 🌐 Works in modern browsers (Chrome, Edge, Firefox)
+- Real-time microphone audio capture (Web Audio API)
+- Dense-only neural network (TFJS LayersModel)
+- 13-dimensional MFCC feature input
+- 100% client-side inference (no backend, no APIs)
+- Color-coded emotion confidence bars
+- Prediction smoothing (EMA)
+- Silence detection & gating
+- FPS / latency throttling for performance
+- Works in modern browsers (Chrome, Edge, Firefox)
 
 ---
 
-## 🧠 Supported Emotions
+## Supported Emotions
 
 The current model is trained to classify **4 emotions**:
 
@@ -42,7 +42,7 @@ The current model is trained to classify **4 emotions**:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 Client-Side-Emotion-Detection/
 ├── public/
@@ -60,7 +60,7 @@ Copy code
 
 ---
 
-## ▶️ How to Run Locally
+## How to Run Locally
 
 ### ⚠️ Important
 Do **NOT** open `index.html` directly using `file://`.  
@@ -86,7 +86,7 @@ Right-click public/index.html
 
 Select “Open with Live Server”
 
-🧪 How to Use
+How to Use
 Click Initialize
 
 Allow microphone permission
@@ -105,10 +105,10 @@ Color-coded bars
 
 Silence is automatically detected and gated.
 
-🧩 Technical Design (Phase-2++ Rules)
+Technical Design (Phase-2++ Rules)
 This phase intentionally avoids browser-unsafe designs.
 
-✔ What’s Used
+What’s Used
 Dense neural network
 
 Single-frame MFCC (no time stacking)
@@ -117,7 +117,7 @@ TensorFlow.js LayersModel
 
 Web Audio API
 
-❌ What’s Avoided
+What’s Avoided
 CNNs / spectrograms
 
 RNNs / LSTMs
@@ -128,7 +128,7 @@ tfjs-node
 
 SavedModel / GraphModel in browser
 
-📊 Dataset & Training (Offline)
+Dataset & Training (Offline)
 Dataset: CREMA-D
 
 Feature: 13-dimensional MFCC
@@ -139,7 +139,7 @@ Export: Keras → TensorFlow.js LayersModel
 
 Training scripts and raw datasets are intentionally excluded from this repo to keep it lightweight and deployment-focused.
 
-⚠️ Known Limitations
+Known Limitations
 Emotion accuracy depends on microphone quality
 
 No temporal context (single-frame inference by design)
@@ -148,7 +148,7 @@ Model size and complexity intentionally limited for browser safety
 
 These are acceptable tradeoffs for Phase-2++.
 
-🔮 Future Roadmap
+Future Roadmap
 Phase-3: Hybrid CNN → Dense (distilled features, browser-safe)
 
 Phase-4: Production hardening (WebWorkers, WASM, mobile optimization)
@@ -157,18 +157,20 @@ Emotion timeline visualization
 
 Multi-language emotion labels
 
-🏁 Phase Status
-✅ Phase-2++ completed successfully
-✅ Browser inference stable
-✅ Architecture validated
+Phase Status
+Phase-2++ completed successfully
+Browser inference stable
+Architecture validated
 
 📜 License
 This project is intended for educational and research purposes.
 Dataset licenses (e.g., CREMA-D) apply to training data separately.
 
-🙌 Acknowledgements
+Acknowledgements
 TensorFlow.js team
 
 CREMA-D dataset authors
 
 Web Audio API contributors
+
+Author - Neeraj Bhatia
