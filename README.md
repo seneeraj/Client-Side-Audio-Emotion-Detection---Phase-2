@@ -1,4 +1,7 @@
 # Real-Time Browser-Based Audio Emotion Detection Library
+
+License: MIT
+
 A **fully browser-based, real-time emotion detection system** built using **TensorFlow.js**, designed to run **entirely on the client side** with **no backend inference**.
 
 This project represents **Phase-2++**, a stability-focused redesign after identifying deployment limitations in CNN-based browser models.
