@@ -11,10 +11,6 @@ This project represents **Phase-2++**, a stability-focused redesign after identi
 
 **Goal:**  
 Build a **browser-deployable emotion detection system** that performs real-time inference on microphone audio using a **Dense-only neural network** and **MFCC features**, fully compatible with TensorFlow.js.
-
-**Key Principle:**  
-> If it doesn’t run safely in the browser, it doesn’t belong in Phase-2++.
-
 ---
 
 ## Key Features
@@ -44,56 +40,22 @@ The current model is trained to classify **4 emotions**:
 
 ---
 
-## Repository Structure
-
-Client-Side-Emotion-Detection/
-├── public/
-│ ├── index.html # Main UI
-│ ├── main.js # Audio capture + inference logic
-│ └── mfcc.js # MFCC feature extraction (13-D)
-├── model/
-│ ├── model.json # TFJS LayersModel
-│ └── group1-shard1of1.bin
-├── README.md
-└── .gitignore
-
-yaml
-Copy code
-
----
-
 ## How to Run Locally
 
 ### ⚠️ Important
 Do **NOT** open `index.html` directly using `file://`.  
 TensorFlow.js requires an HTTP server.
 
+Test Link: Click on this link or copy paste it in any browser:    https://seneeraj.github.io/Real-Time-Browser-Based-Audio-Emotion-Detection-Library/
+
 ---
-
-### Option 1: Python HTTP Server (Recommended)
-
-From the project root:
-
-```bash
-python -m http.server 8000
-Then open in browser:
-
-bash
-Copy code
-http://localhost:8000/public/index.html
-Option 2: VS Code Live Server
-Install Live Server extension
-
-Right-click public/index.html
-
-Select “Open with Live Server”
-
 How to Use
+
 Click Initialize
 
-Allow microphone permission
+Allow microphone permission (Till you will not give microphone permision on device, the start detection button will be greyed out.)
 
-Click Start Detection
+Then Click Start Detection
 
 Speak normally (try different emotions)
 
@@ -110,59 +72,32 @@ Silence is automatically detected and gated.
 Technical Design (Phase-2++ Rules)
 This phase intentionally avoids browser-unsafe designs.
 
-What’s Used
+What’s we have Used techologically:
+
 Dense neural network
-
 Single-frame MFCC (no time stacking)
-
 TensorFlow.js LayersModel
-
 Web Audio API
-
-What’s Avoided
-CNNs / spectrograms
-
-RNNs / LSTMs
-
-Backend inference
-
-tfjs-node
-
-SavedModel / GraphModel in browser
 
 Dataset & Training (Offline)
 Dataset: CREMA-D
-
 Feature: 13-dimensional MFCC
-
 Training: Python (TensorFlow / Keras)
-
 Export: Keras → TensorFlow.js LayersModel
 
 Training scripts and raw datasets are intentionally excluded from this repo to keep it lightweight and deployment-focused.
 
-Known Limitations
+Known Limitations:
+
 Emotion accuracy depends on microphone quality
-
 No temporal context (single-frame inference by design)
-
 Model size and complexity intentionally limited for browser safety
-
 These are acceptable tradeoffs for Phase-2++.
 
-Future Roadmap
+Future Roadmap (Phase 3) and (Phase 4)
+
 Phase-3: Hybrid CNN → Dense (distilled features, browser-safe)
-
 Phase-4: Production hardening (WebWorkers, WASM, mobile optimization)
-
-Emotion timeline visualization
-
-Multi-language emotion labels
-
-Phase Status
-Phase-2++ completed successfully
-Browser inference stable
-Architecture validated
 
 📜 License
 This project is intended for educational and research purposes.
